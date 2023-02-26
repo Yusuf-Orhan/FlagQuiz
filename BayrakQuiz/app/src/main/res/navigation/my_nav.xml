@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/anaFragment">
+
+    <fragment
+        android:id="@+id/anaFragment"
+        android:name="orhan.yusuf.bayrakquiz.Fragment.AnaFragment"
+        android:label="AnaFragment" >
+        <action
+            android:id="@+id/action_anaFragment_to_soruEkranıFragment"
+            app:destination="@id/soruEkranıFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/soruEkranıFragment"
+        android:name="orhan.yusuf.bayrakquiz.Fragment.SoruEkranıFragment"
+        android:label="SoruEkranıFragment" >
+        <action
+            android:id="@+id/action_soruEkranıFragment_to_sonucEkranıFragment"
+            app:destination="@id/sonucEkranıFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sonucEkranıFragment"
+        android:name="orhan.yusuf.bayrakquiz.Fragment.SonucEkranıFragment"
+        android:label="SonucEkranıFragment" >
+        <action
+            android:id="@+id/action_sonucEkranıFragment_to_soruEkranıFragment"
+            app:destination="@id/soruEkranıFragment" />
+        <action
+            android:id="@+id/action_sonucEkranıFragment_to_anaFragment"
+            app:destination="@id/anaFragment" />
+        <argument
+            android:name="dogru_sayisi"
+            app:argType="integer"
+            android:defaultValue="10" />
+        <argument
+            android:name="yanlis_sayisi"
+            android:defaultValue="10" />
+    </fragment>
+</navigation>
